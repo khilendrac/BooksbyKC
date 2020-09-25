@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Books</title>
+    <style>
+        .wrapper{
+        height: 700px;
+        width: 700px;
+        background-color:#bed4f9;
+
+        }
+        .header{
+        height: 100px;
+        width: 700px;
+        background-color:#bed4f9;
+        float:left;
+
+        }
+        .header1{
+        height: 80px;
+        width: 100px;
+        background-color:Grey;
+        margin: 10px;
+        color:#FFF;
+        float:left;
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+        .header2{
+        height: 80px;
+        width: 560px;
+        background-color:#bed4f9;;
+        margin: 10px;
+        float:left;
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+
+        }
+        .bodydiv{
+        height: 550px;
+        width: 700px;
+        background-color:White;
+        float:left;
+        }
+        .bodydiv1{
+        height: 540px;
+        width: 100px;
+        background-color:White;
+        margin:5px;
+        float:left;
+
+        }
+        .bodydiv2{
+        height: 540px;
+        width: 580px;
+        background-color:White;
+        margin:5px;
+        float:left;
+                font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+
+        .form{
+        height: 450px;
+        width: 540px;
+        margin: 10px;
+        float: left;
+        border-color:black;
+        border-style:solid;
+        padding:10px;
+        overflow-y: scroll;
+
+
+        }
+
+        .footer{
+        height: 50px;
+        width: 700px;
+        background-color:Blue;
+        float:left;
+        text-align:center;
+        color:#FFF;
+        font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="header">
+        <div class="header1">
+            <label>BOOKS</label>
+
+        </div>
+        <div class="header2">
+            <H1> ADMIN PANEL</H1>
+
+        </div>
+    </div>
+    <div class="bodydiv">
+        <div class="bodydiv1">
+            <a href="{% url 'add-page' %}">Add Book</a>
+
+        </div>
+        <div class="bodydiv2">
+
+            <p>
+                Books that are available are:
+            </p>
+            <div class="form">
+                {% block content %}
+
+
+                {%for book in allbooks %}
+                <p>
+                    Id: {{book.id}}
+                </p>
+                <p>
+                    Title: {{book.title}}
+                </p>
+                <p>
+                    Date Published: {{book.date}}
+                </p>
+                <p>
+                    Author: {{book.author}}
+                </p>
+                <p>
+                    Publication: {{book.publication}}
+                </p>
+                <p>
+                    Price(AUD): {{book.price}}
+                </p>
+                <hr>
+                <br>
+
+
+                {%endfor%}
+
+
+                {% endblock%}
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <P>
+            Copyright &copy; Books
+        </P>
+
+    </div>
+
+
+</div>
+
+</body>
+</html>
