@@ -1,4 +1,5 @@
 
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
@@ -30,6 +31,7 @@ def snippet_detail(request) :
     if request.method == 'POST' :
         form = SnippetForm(request.POST)
         if form.is_valid() :
+
             form.save()
 
     form = SnippetForm()

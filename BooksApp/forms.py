@@ -30,6 +30,7 @@ class AddForm(forms.ModelForm):
             'publication',
             'price',
             Submit("submit", "ADD", css_class="btn-success")
+
 #The submit button is used in the form which will lead to sumbmission of the data
 
         )
