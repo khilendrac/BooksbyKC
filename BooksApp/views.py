@@ -1,4 +1,4 @@
-from Tools.scripts.var_access_benchmark import B
+
 from django.shortcuts import render
 from django.http import HttpResponse
 
